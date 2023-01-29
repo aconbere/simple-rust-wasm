@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -eux
+
+./scripts/clean
+wasm-pack build --target web --out-dir pkg --out-name index 
+cp -r ./pkg/* ./static/pkg/
