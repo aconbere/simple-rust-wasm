@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
 
-rm -rf ./pkg/*
 rm -rf ./static/pkg/*
 cargo clean

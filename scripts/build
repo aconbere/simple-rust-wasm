@@ -2,6 +2,12 @@
 
 set -eux
 
-./scripts/clean
-wasm-pack build --target web --out-dir pkg --out-name index 
-cp -r ./pkg/* ./static/pkg/
+cargo build \
+    --target wasm32-unknown-unknown \
+    --release
+wasm-bindgen \
+    --target web \
+    --typescript \
+    --out-dir static/pkg \
+    --out-name index \
+    ./target/wasm32-unknown-unknown/release/simple_rust_wasm.wasm
