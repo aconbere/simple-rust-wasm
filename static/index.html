@@ -5,7 +5,10 @@
     <title>My Rust + Webpack project!</title>
   </head>
   <body>
-      <canvas id="webgl" />
+      <div style="height: 600px;">
+      <canvas id="my" style="position:absolute;top:0;bottom: 0;left: 0;right: 0;margin:auto;"></canvas>
+      </div>
+      <!--<canvas id="webgl" />-->
       <!--<script type="module" src="index.js"></script>-->
     <script type="module">
       /* Use ES module import syntax to import functionality from the module
@@ -51,10 +54,6 @@
         // And afterwards we can use all the functionality defined in wasm.
         const result = add(1, 2);
         console.log(`1 + 2 = ${result}`);
-
-        if (result !== 3) {
-          throw new Error("wasm addition doesn't work!");
-        }
       }
 
       run();
